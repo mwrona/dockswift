@@ -1,0 +1,33 @@
+mariadb:
+  image: cosmicq/openstack-mariadb
+  ports:
+    - "8080:80"
+  environment:
+    - INITIALIZE=yes
+  hostname: mariadb
+
+keystone:
+  image: predicsis/openstack-keystone
+  links:
+    - mariadb:mariadb
+
+datas:
+  image: busybox
+  volumes:
+    - /srv
+
+swift:
+  image: predicsis/openstack-swift
+  volumes_from:
+    - datas
+  links:
+    - keystone:keystone
+
+horizon:
+  image: predicsis/openstack-horizon
+  ports:
+    - "80:80"
+  hostname: horizon
+  links:
+    - keystone:keystone
+    - swift:swift
