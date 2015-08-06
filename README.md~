@@ -35,7 +35,6 @@ Here is a sample command to run :
 #### Environment Variables ####
 
 INITIALIZE=yes This sets executes the sql statements in /usr/local/etc
-
 IPADDRESS=localhost or IPADDRESS=192.168.59.103 (boot2docker ip) This sets the endpoint of Swift for Keystone. It allows the use of external Swift Clients using Keystone
 
 #### Cyberduck ####
