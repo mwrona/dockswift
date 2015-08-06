@@ -45,7 +45,8 @@ To access to your Storage through Cyberduck, you can download the preconfigured 
    https://svn.cyberduck.io/trunk/profiles/Openstack%20Swift%20(HTTP).cyberduckprofile
 
 Then configure :
-     Server : (your ip address)
-     Port : 5000
-     Username : (tenant name):(user name)
+
+     Server : (your ip address) \
+     Port : 5000 \
+     Username : (tenant name):(user name) \
      Password : (user password)
