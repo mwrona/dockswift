@@ -49,8 +49,7 @@ RUN apt-get -y install \
         libapache2-mod-wsgi \
         memcached \
         python-memcache \
-        python-django-nova \
-    && apt-get clean
+        python-django-nova
 
 RUN apt-get remove -y --auto-remove openstack-dashboard-ubuntu-theme
 
@@ -103,6 +102,20 @@ ADD horizon/openstack-dashboard.conf /etc/apache2/conf-available/openstack-dashb
 #ADD horizon/start_memcached.sh /etc/service/memcached/run
 ADD horizon/start_apache2.sh /etc/service/apache2/run
 
+#django-swiftbrowser
+
+#RUN wget https://bootstrap.pypa.io/get-pip.py
+#RUN python get-pip.py
+#RUN apt-get install -y python python-pip \
+#    && apt-get clean
+#RUN pip install django-swiftbrowser
+RUN apt-get install -y git
+RUN git clone https://github.com/cschwede/django-swiftbrowser.git
+ADD swiftbrowser/settings.py /django-swiftbrowser/swiftbrowser/settings.py
+WORKDIR django-swiftbrowser
+RUN python setup.py install
+ADD swiftbrowser/start_swiftbrowser.sh /etc/service/swiftbrowser/run
+
 
 EXPOSE 80
 EXPOSE 3306
@@ -110,6 +123,7 @@ EXPOSE 5000
 EXPOSE 35357
 EXPOSE 11211
 EXPOSE 8080
+EXPOSE 8000
 
 
 CMD ["/sbin/my_init"]

@@ -8,7 +8,7 @@ To run the container, provide your ip address as an environment variable (ex : l
 
 Here is a sample command to run :
 
-     docker run -P -p 80:80 -p 8080:8080 -p 5000:5000 -p 35357:35357 -d -e INITIALIZE=yes -e IPADDRESS=192.168.59.103 --name swift predicsis/dockswift
+     docker run -P -p 80:80 -p 8080:8080 -p 5000:5000 -p 35357:35357 -p 8000:8000 -d -e INITIALIZE=yes -e IPADDRESS=192.168.59.103 --name swift predicsis/dockswift
 
 #### Ports ####
 
@@ -19,6 +19,8 @@ Here is a sample command to run :
 35357 - To connect to keystone using admin url
 
 8080:8080 - To access to Object Storage after Keystone authentication
+
+8000:8000 - To connect to Swiftbrowser
 
 #### Volumes ####
 
@@ -50,3 +52,7 @@ Then configure :
      Port : 5000 \
      Username : (tenant name):(user name) \
      Password : (user password)
+
+#### Swiftbrowser ####
+
+To access to swiftbrowser, open "http://(your ip address):8000/" in your browser and use 'tenant/project:username' to login
