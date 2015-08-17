@@ -8,7 +8,11 @@ To run the container, provide your ip address as an environment variable (ex : l
 
 Here is a sample command to run :
 
-     docker run -P -p 80:80 -p 8080:8080 -p 5000:5000 -p 35357:35357 -p 8000:8000 -d -e INITIALIZE=yes -e IPADDRESS=192.168.59.103 --name swift predicsis/dockswift
+    docker run -P -p 80:80 -p 8080:8080 -p 5000:5000 -p 35357:35357 -p 8000:8000 -d -e INITIALIZE=yes -e IPADDRESS=192.168.59.103 --name swift predicsis/dockswift
+
+Temp url settings :
+
+    docker exec -it swift swift post -m "Temp-URL-Key:temp_url_key" -V 2 --os-auth-url='http://localhost:5000/v2.0' --os-username='swift' --os-password='swift' --os-tenant-name='service'
 
 #### Ports ####
 
