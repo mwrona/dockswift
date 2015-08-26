@@ -4,7 +4,6 @@ workers = 1
 user = swift
 log_facility = LOG_LOCAL1
 eventlet_debug = true
-cors_allow_origin = localhost:8080, localhost:5000
 
 
 [pipeline:main]
