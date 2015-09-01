@@ -52,11 +52,15 @@ To access to your Storage through Cyberduck, you can download the preconfigured 
 
 Then configure :
 
-     Server : (your ip address) \
-     Port : 5000 \
-     Username : (tenant name):(user name) \
+     Server : (your ip address)
+     Port : 5000
+     Username : (tenant name):(user name)
      Password : (user password)
 
 #### Swiftbrowser ####
 
-To access to swiftbrowser, open "http://(your ip address):8000/" in your browser and use 'tenant/project:username' to login
+To access to swiftbrowser, open "http://(your ip address):8000/" in your browser and use 'admin:admin' (Username) and 'openstack' (Password) to login (default ids)
+
+#### Horizon ####
+
+To access to Horizon, open "http://(your ip adress)/" in your browser and use 'admin' (Username) and 'openstack' (Password) to login (default ids)
