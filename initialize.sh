@@ -199,7 +199,7 @@ fi
 #fi
 
 echo "Starting supervisord..."
-/usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
 
 if [ ! -z "$IPADDRESS" ]; then
     SWIFT_ENDPOINT=$IPADDRESS
