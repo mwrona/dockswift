@@ -35,7 +35,7 @@ IPADDRESS = os.getenv('IPADDRESS', "localhost")
 SWIFT_AUTH_URL = "http://%s:5000/v2.0/" % IPADDRESS
 SWIFT_AUTH_VERSION = 2  # 2 for keystone
 STORAGE_URL = "http://%s:8080/v1/" % IPADDRESS
-BASE_URL = "http://%s:8000" % IPADDRESS # default if using built-in runserver
+#BASE_URL = "http://%s:8000" % IPADDRESS # default if using built-in runserver
 SWAUTH_URL = "http://%s:8080/auth/v2" % IPADDRESS
 
 TIME_ZONE = 'Europe/Berlin'

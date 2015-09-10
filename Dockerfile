@@ -112,6 +112,8 @@ ADD horizon/start_apache2.sh /etc/service/apache2/run
 RUN apt-get install -y git
 RUN git clone https://github.com/cschwede/django-swiftbrowser.git
 ADD swiftbrowser/settings.py /django-swiftbrowser/swiftbrowser/settings.py
+ADD swiftbrowser/utils.py /django-swiftbrowser/swiftbrowser/utils.py
+ADD swiftbrowser/views.py /django-swiftbrowser/swiftbrowser/views.py
 WORKDIR django-swiftbrowser
 RUN python setup.py install
 ADD swiftbrowser/start_swiftbrowser.sh /etc/service/swiftbrowser/run

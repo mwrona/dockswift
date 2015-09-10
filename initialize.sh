@@ -207,8 +207,6 @@ else
     SWIFT_ENDPOINT="localhost"
 fi
 
-echo $SWIFT_ENDPOINT
-
 if [ $(keystone --os-endpoint=http://keystone:35357/v2.0 --os-token=74d52ad7f4d039e55d84 user-list |grep swift |wc -\
 l) -ne 1 ]; then
     echo "Didn't find the swift user, adding the swift user/tenant/role..."
