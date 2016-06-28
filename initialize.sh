@@ -44,6 +44,7 @@ if [ ! -z "$INITIALIZE" ]; then
   while [ `mysqlcheck mysql -u "root" "-popenstack" |wc -l` -lt 2 ]
   do
     sleep 2
+    /usr/bin/mysqld_safe
   done
   echo "Adding OpenStack databases and users..."
   /usr/bin/mysql -u "root" "-popenstack" < /usr/local/etc/initialize_db.sql
